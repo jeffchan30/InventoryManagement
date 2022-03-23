@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyPartController">
+   <children>
+      <Label layoutX="43.0" layoutY="78.0" text="Modify Part">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="40.0" />
+         </padding></Label>
+      <GridPane layoutX="100.0" layoutY="175.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="idLabel" text="ID" />
+            <Label fx:id="nameLabel" text="Name" GridPane.rowIndex="1" />
+            <Label fx:id="invLabel" text="Inv" GridPane.rowIndex="2" />
+            <Label fx:id="priceLabel" text="Price/Cost" GridPane.rowIndex="3" />
+            <Label fx:id="maxLabel" text="Max" GridPane.rowIndex="4" />
+            <Label fx:id="machineIDLabel" text="Machine ID" GridPane.rowIndex="5" />
+            <TextField fx:id="idPartText" disable="true" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="namePartText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="invPartText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="pricePartText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="maxPartText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="machineIDPartText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="334.0" layoutY="337.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="minLabel" text="Min" />
+            <TextField fx:id="minPartText" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox layoutX="215.0" layoutY="78.0" prefHeight="64.0" prefWidth="207.0">
+         <children>
+            <RadioButton fx:id="inhouseButton" mnemonicParsing="false" onAction="#onInHouse" prefHeight="0.0" prefWidth="87.0" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="outsourcedButton" mnemonicParsing="false" onAction="#onOutsourced" text="Outsourced" toggleGroup="$tgroup">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></RadioButton>
+         </children></HBox>
+      <Button fx:id="savePartButton" layoutX="350.0" layoutY="465.0" mnemonicParsing="false" onAction="#onActionSavePart" text="Save" />
+      <Button fx:id="cancelPartButton" layoutX="430.0" layoutY="465.0" mnemonicParsing="false" onAction="#onActionCancelPart" text="Cancel" />
+       <Label fx:id="lblDisplay" layoutX="50.0" layoutY="469.0"  />
+
+   </children>
+</AnchorPane>
